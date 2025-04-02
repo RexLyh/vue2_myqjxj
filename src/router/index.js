@@ -20,11 +20,30 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
+    path: "/BallGame",
+    name: "BallGame",
+    component: () =>
+      import(/* webpackChunkName: "ballgame" */ "../views/BallGameView.vue"),
+  },
+  {
     path: "/YourView",
     name: "YourView",
-
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/YourView.vue"),
+      import(/* webpackChunkName: "your" */ "../views/YourView.vue"),
+  },
+  {
+    path: "/GameView",
+    name: "GameView",
+    component: () =>
+      import(/* webpackChunkName: "game" */ "../views/GameView.vue"),
+  },
+  {
+    path: "/EmojiMatchGame",
+    name: "EmojiMatchGame",
+    component: () =>
+      import(
+        /* webpackChunkName: "EmojiMatchGame" */ "../views/EmojiMatchGame.vue"
+      ),
   },
 ];
 

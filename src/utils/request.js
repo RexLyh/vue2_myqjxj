@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
-  timeout: 5000 // 请求超时时间
+  timeout: 5000, // 请求超时时间
 });
 
 // 请求拦截器
 service.interceptors.request.use(
-  config => {
+  (config) => {
     // 在发送请求之前做些什么
     return config;
   },
-  error => {
+  (error) => {
     // 处理请求错误
     console.log(error);
     Promise.reject(error);
@@ -20,14 +20,14 @@ service.interceptors.request.use(
 
 // 响应拦截器
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data;
     // 处理响应数据
     return res;
   },
-  error => {
+  (error) => {
     // 处理响应错误
-    console.log('err' + error);
+    console.log("err" + error);
     return Promise.reject(error);
   }
 );
